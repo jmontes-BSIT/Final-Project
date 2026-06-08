@@ -1,98 +1,265 @@
-
+html{
+    scroll-behavior: smooth;
+}
 
 body{
-    background-color: #440b45;
-    color: aliceblue;
     margin: 0;
     font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #3b0764, #1e0120);
+    color: white;
 }
 
-
+/* NAVBAR */
 .navbar{
-    background-color: #2b062c;
-    padding: 20px;
-    text-align: center;
     position: sticky;
     top: 0;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    text-align: center;
+    z-index: 1000;
 }
 
-.navbar ul{
+.logo{
+    color: yellow;
+    font-size: 35px;
+}
+
+.nav-links{
     list-style: none;
     padding: 0;
 }
 
-.navbar li{
-    display: inline;
-    margin: 15px;
+.nav-links li{
+    display: inline-block;
+    margin: 10px;
 }
 
-.navbar a{
+.nav-links a{
     color: white;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
+    transition: 0.3s;
 }
 
-.navbar a:hover{
+.nav-links a:hover{
     color: yellow;
 }
 
+/* PROFILE */
+#profile{
+    padding: 80px 20px;
+}
 
 .title1{
     text-align: center;
-    font-size: 50px;
+    font-size: 35px;
+    color: yellow;
 }
 
 .title{
-    font-size: 100px;
     text-align: center;
+    font-size: 90px;
+    margin-bottom: 10px;
 }
 
-.section-title{
+.name{
     text-align: center;
-    font-size: 60px;
-    margin-top: 50px;
+    font-size: 35px;
 }
-
 
 .pic{
     display: block;
     margin: auto;
-    width: 400px;
-    border-radius: 20px;
+    width: 350px;
+    border-radius: 50%;
+    border: 5px solid yellow;
+    box-shadow: 0 0 20px black;
+    transition: 0.5s;
+}
+
+.pic:hover{
+    transform: scale(1.05);
+}
+
+/* SECTION */
+section{
+    padding: 60px 20px;
+    text-align: center;
+    animation: fadeIn 1.5s ease;
+}
+
+.section-title{
+    font-size: 50px;
+    color: yellow;
+}
+
+/* TEXT */
+.text{
+    font-size: 25px;
+    max-width: 900px;
+    margin: auto;
+    line-height: 1.8;
+    padding: 10px;
+}
+
+/* GALLERY */
+.gallery-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .style{
-    height: 300px;
     width: 250px;
-    margin: 10px;
+    height: 300px;
+    object-fit: cover;
+    margin: 15px;
     border-radius: 15px;
+    transition: 0.4s;
+    box-shadow: 0 0 15px black;
 }
 
+.style:hover{
+    transform: translateY(-10px) scale(1.05);
+}
 
-.text{
+/* VIDEOS */
+video.style{
+    width: 300px;
+    height: 200px;
+}
+
+/* SKILLS */
+.skills-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skill-card{
+    background: rgba(255,255,255,0.1);
+    padding: 25px;
+    width: 250px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px black;
+    transition: 0.4s;
+}
+
+.skill-card:hover{
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.2);
+}
+
+.skill-card h3{
+    color: yellow;
     font-size: 30px;
-    text-align: center;
-    padding: 20px;
 }
 
-
-.btn{
-    display: block;
+/* CONTACT FORM */
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
     margin: auto;
-    padding: 15px 30px;
-    font-size: 20px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    margin: 10px 0;
+    padding: 15px;
     border: none;
     border-radius: 10px;
-    background-color: yellow;
+    font-size: 18px;
+}
+
+.contact-form textarea{
+    height: 150px;
+}
+
+/* BUTTON */
+.btn{
+    display: block;
+    margin: 20px auto;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    background: yellow;
+    font-size: 20px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .btn:hover{
-    background-color: orange;
+    background: orange;
+    transform: scale(1.05);
 }
 
+/* LINKS */
+a{
+    color: yellow;
+    text-decoration: none;
+}
 
-section{
-    padding: 40px;
+a:hover{
+    color: orange;
+}
+
+/* FOOTER */
+footer{
+    background: black;
     text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+    .title{
+        font-size: 50px;
+    }
+
+    .section-title{
+        font-size: 35px;
+    }
+
+    .text{
+        font-size: 20px;
+    }
+
+    .nav-links li{
+        display: block;
+        margin: 10px 0;
+    }
+
+    .pic{
+        width: 220px;
+    }
+
+    .style{
+        width: 90%;
+        height: auto;
+    }
+
+    .contact-form{
+        width: 95%;
+    }
+
 }
